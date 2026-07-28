@@ -4725,3 +4725,14 @@ body{
         font-size: 21px;
     }
 }
+
+/* ALL WEBSITE HEADINGS - MANROPE */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Manrope", sans-serif !important;
+}
