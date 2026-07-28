@@ -106,9 +106,10 @@
 
     </div>
 
+
     <div class="product-container">
 
-        <!-- Product 1 -->
+        <!-- ================= PRODUCT 1 ================= -->
 
         <div class="product-card">
 
@@ -128,9 +129,18 @@
                 View Product
             </button>
 
+            <button
+                class="add-cart-btn"
+                data-name="Fresh Milk"
+                data-price="60"
+                data-image="images/milk.jpg">
+                Add to Cart
+            </button>
+
         </div>
 
-        <!-- Product 2 -->
+
+        <!-- ================= PRODUCT 2 ================= -->
 
         <div class="product-card">
 
@@ -150,9 +160,18 @@
                 View Product
             </button>
 
+            <button
+                class="add-cart-btn"
+                data-name="Fresh Butter"
+                data-price="120"
+                data-image="images/butter.jpg">
+                Add to Cart
+            </button>
+
         </div>
 
-        <!-- Product 3 -->
+
+        <!-- ================= PRODUCT 3 ================= -->
 
         <div class="product-card">
 
@@ -172,9 +191,18 @@
                 View Product
             </button>
 
+            <button
+                class="add-cart-btn"
+                data-name="Cheese"
+                data-price="180"
+                data-image="images/cheese.jpg">
+                Add to Cart
+            </button>
+
         </div>
 
-        <!-- Product 4 -->
+
+        <!-- ================= PRODUCT 4 ================= -->
 
         <div class="product-card">
 
@@ -192,6 +220,14 @@
 
             <button class="view-product-btn">
                 View Product
+            </button>
+
+            <button
+                class="add-cart-btn"
+                data-name="Curd & Yogurt"
+                data-price="50"
+                data-image="images/yogurt.jpg">
+                Add to Cart
             </button>
 
         </div>
@@ -819,7 +855,221 @@
     </div>
 
 </div>
+
+<!-- ================= SHOPPING CART ================= -->
+
+<button class="cart-floating-btn" id="cartBtn">
+    🛒 Cart
+    <span id="cartCount">0</span>
+</button>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+
+        <button class="close-cart" id="closeCart">
+            &times;
+        </button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+
+        <div class="empty-cart" id="emptyCart">
+            <p>Your cart is empty.</p>
+        </div>
+
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+            <span>Total</span>
+            <strong>₹<span id="cartTotal">0</span></strong>
+        </div>
+
+        <button class="checkout-btn" id="checkoutBtn">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</div>
+<!-- ================= CHECKOUT POPUP ================= -->
+
+<div class="checkout-overlay" id="checkoutOverlay">
+
+    <div class="checkout-modal">
+
+        <button class="close-checkout" id="closeCheckout">
+            &times;
+        </button>
+
+        <h2>Checkout</h2>
+
+        <p class="checkout-subtitle">
+            Enter your delivery details to complete your order.
+        </p>
+
+        <form id="checkoutForm">
+
+            <div class="checkout-row">
+
+                <div class="checkout-field">
+                    <label>Full Name</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <div class="checkout-field">
+                    <label>Mobile Number</label>
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="Enter mobile number"
+                        required>
+                </div>
+
+            </div>
+
+            <div class="checkout-field">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    id="customerEmail"
+                    placeholder="Enter your email"
+                    required>
+            </div>
+
+            <div class="checkout-field">
+                <label>Delivery Address</label>
+                <textarea
+                    id="customerAddress"
+                    placeholder="Enter complete delivery address"
+                    required></textarea>
+            </div>
+
+            <div class="checkout-row">
+
+                <div class="checkout-field">
+                    <label>City</label>
+                    <input
+                        type="text"
+                        id="customerCity"
+                        placeholder="Enter city"
+                        required>
+                </div>
+
+                <div class="checkout-field">
+                    <label>PIN Code</label>
+                    <input
+                        type="text"
+                        id="customerPin"
+                        placeholder="Enter PIN code"
+                        required>
+                </div>
+
+            </div>
+
+            <div class="payment-box">
+
+                <h3>Payment Method</h3>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Cash on Delivery"
+                        checked>
+
+                    Cash on Delivery
+                </label>
+
+            </div>
+
+            <div class="checkout-total">
+
+                <span>Total Amount</span>
+
+                <strong>
+                    ₹<span id="checkoutTotal">0</span>
+                </strong>
+
+            </div>
+
+            <button type="submit" class="place-order-btn">
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 <script src="script.js"></script>
+<script type="module">
+
+  // Firebase App
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+  // Firestore Database
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+
+  // Firebase Configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyC0Ru5NPxmXbfxjm7g969WE33ZUGCQKgmQ",
+    authDomain: "freshdairy-1fa45.firebaseapp.com",
+    projectId: "freshdairy-1fa45",
+    storageBucket: "freshdairy-1fa45.firebasestorage.app",
+    messagingSenderId: "194434130951",
+    appId: "1:194434130951:web:e6f1135f137a7e043176a2"
+  };
+
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  // Initialize Firestore
+  const db = getFirestore(app);
+
+
+  // Function to save order in Firebase
+  window.saveOrderToFirebase = async function(orderData) {
+
+    try {
+
+      const docRef = await addDoc(collection(db, "orders"), {
+        ...orderData,
+        orderStatus: "Pending",
+        createdAt: serverTimestamp()
+      });
+
+      console.log("Order saved successfully:", docRef.id);
+
+      return true;
+
+    } catch (error) {
+
+      console.error("Error saving order:", error);
+
+      return false;
+    }
+
+  };
+
+</script>
+
 
 </body>
 </html>
