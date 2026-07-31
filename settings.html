@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshDairy - Settings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2><span>FRESH</span>DAIRY</h2>
+            <p>ADMIN PANEL</p>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="customers.html">
+                Customers
+            </a>
+
+            <a href="settings.html" class="active">
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="back-site">
+                ← Back to Website
+            </a>
+
+            <button id="logoutBtn" class="logout-btn">
+                Log Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-content">
+
+        <!-- HEADER -->
+        <div class="dashboard-header">
+
+            <div>
+                <h1>Settings</h1>
+                <p>Manage your FreshDairy business settings.</p>
+            </div>
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <span>FreshDairy</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SETTINGS CARD -->
+        <section class="settings-card">
+
+            <div class="settings-heading">
+                <h2>Business Information</h2>
+                <p>Update your dairy business details.</p>
+            </div>
+
+
+            <form id="settingsForm">
+
+                <div class="form-group">
+
+    <label for="businessLogo">
+        Business Logo
+    </label>
+
+    <img
+        id="logoPreview"
+        src="https://placehold.co/180x180?text=Logo"
+        alt="Logo Preview"
+        class="logo-preview"
+    >
+
+    <input
+        type="file"
+        id="businessLogo"
+        accept="image/*"
+    >
+
+</div>
+
+                <div class="form-group">
+                    <label for="businessName">
+                        Business Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="businessName"
+                        placeholder="FreshDairy"
+                    >
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="businessPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="businessPhone"
+                            placeholder="Enter phone number"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="businessEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="businessEmail"
+                            placeholder="Enter email address"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="businessAddress">
+                        Business Address
+                    </label>
+
+                    <textarea
+                        id="businessAddress"
+                        rows="4"
+                        placeholder="Enter dairy business address"
+                    ></textarea>
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="save-settings-btn"
+                >
+                    Save Changes
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script type="module" src="settings.js"></script>
+
+</body>
+</html>

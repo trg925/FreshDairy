@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshDairy - Orders</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h2>
+                <span>FRESH</span>DAIRY
+            </h2>
+
+            <p>ADMIN PANEL</p>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="orders.html" class="active">
+                Orders
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="customers.html">
+                Customers
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="back-site"
+            >
+                ← Back to Website
+            </a>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                Log Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="dashboard-content">
+
+        <!-- HEADER -->
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>Orders</h1>
+
+                <p>
+                    Manage all FreshDairy customer orders.
+                </p>
+
+            </div>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>Admin</strong>
+
+                    <span>
+                        FreshDairy
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ORDER STATS ================= -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <p>Total Orders</p>
+
+                <h2 id="totalOrders">
+                    0
+                </h2>
+
+                <span>
+                    All customer orders
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Pending Orders</p>
+
+                <h2 id="pendingOrders">
+                    0
+                </h2>
+
+                <span>
+                    Waiting for confirmation
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Confirmed</p>
+
+                <h2 id="confirmedOrders">
+                    0
+                </h2>
+
+                <span>
+                    Confirmed orders
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Delivered</p>
+
+                <h2 id="deliveredOrders">
+                    0
+                </h2>
+
+                <span>
+                    Successfully delivered
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ORDERS SECTION ================= -->
+
+        <section class="recent-orders">
+
+            <div class="orders-header">
+
+                <div>
+
+                    <h2>
+                        All Orders
+                    </h2>
+
+                    <p>
+                        View and manage customer orders.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="order-tools">
+
+                <input
+                    type="text"
+                    id="orderSearch"
+                    placeholder="Search customer or phone..."
+                >
+
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="confirmed">
+                        Confirmed
+                    </option>
+
+                    <option value="delivered">
+                        Delivered
+                    </option>
+
+                    <option value="cancelled">
+                        Cancelled
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================= TABLE ================= -->
+
+            <div class="orders-table-wrapper">
+
+                <table class="orders-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Phone
+                            </th>
+
+                            <th>
+                                Products
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Payment
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="ordersTable">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                class="loading"
+                            >
+                                Loading orders...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= FIREBASE ORDERS JS ================= -->
+
+<script
+    type="module"
+    src="orders.js"
+></script>
+
+</body>
+
+</html>

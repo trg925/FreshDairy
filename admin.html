@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshDairy - Admin Login</title>
+
+    <!-- Manrope Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<div class="admin-page">
+
+    <div class="login-card">
+
+        <!-- LOGO -->
+
+        <div class="admin-logo">
+
+            <div class="logo-icon">
+                🌿
+            </div>
+
+            <h1>
+                <span>FRESH</span>DAIRY
+            </h1>
+
+            <div class="admin-title">
+                <span></span>
+                <p>ADMIN PANEL</p>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome-text">
+
+            <h2>Welcome back!</h2>
+
+            <p>
+                Login to manage orders, customers and products.
+            </p>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="adminLoginForm">
+
+            <!-- USERNAME -->
+
+            <div class="input-group">
+
+                <label for="adminUsername">
+                    Email Address
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="adminUsername"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTIONS -->
+
+            <div class="login-options">
+
+                <label class="remember">
+
+                    <input type="checkbox">
+
+                    <span>Remember Me</span>
+
+                </label>
+
+                <a href="#" class="forgot-password">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button type="submit" class="login-btn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                <span>Log In</span>
+
+            </button>
+
+        </form>
+
+
+        <!-- BACK WEBSITE -->
+
+        <div class="back-area">
+
+            <span></span>
+
+            <a href="index.html" class="back-website">
+
+                <i class="fa-solid fa-house"></i>
+
+                Back to Website
+
+            </a>
+
+            <span></span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script type="module" src="admin.js"></script>
+
+</body>
+
+</html>

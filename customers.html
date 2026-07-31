@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshDairy - Customers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h2>
+                <span>FRESH</span>DAIRY
+            </h2>
+
+            <p>ADMIN PANEL</p>
+
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="customers.html" class="active">
+                Customers
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="back-site">
+                ← Back to Website
+            </a>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                Log Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="dashboard-content">
+
+        <!-- HEADER -->
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>Customers</h1>
+
+                <p>
+                    View and manage FreshDairy customers.
+                </p>
+
+            </div>
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>Admin</strong>
+
+                    <span>
+                        FreshDairy
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CUSTOMER STATS ================= -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <p>Total Customers</p>
+
+                <h2 id="totalCustomers">
+                    0
+                </h2>
+
+                <span>
+                    Unique customers
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Total Orders</p>
+
+                <h2 id="totalOrders">
+                    0
+                </h2>
+
+                <span>
+                    Customer orders
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Total Revenue</p>
+
+                <h2 id="totalRevenue">
+                    ₹0
+                </h2>
+
+                <span>
+                    Total customer spending
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CUSTOMERS SECTION ================= -->
+
+        <section class="recent-orders">
+
+            <div class="orders-header">
+
+                <div>
+
+                    <h2>
+                        All Customers
+                    </h2>
+
+                    <p>
+                        Customers generated from FreshDairy orders.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="order-tools">
+
+                <input
+                    type="text"
+                    id="customerSearch"
+                    placeholder="Search customer or phone..."
+                >
+
+            </div>
+
+
+            <!-- ================= CUSTOMER TABLE ================= -->
+
+            <div class="orders-table-wrapper">
+
+                <table class="orders-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Phone
+                            </th>
+
+                            <th>
+                                Total Orders
+                            </th>
+
+                            <th>
+                                Total Spent
+                            </th>
+
+                            <th>
+                                Last Order
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="customersTable">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                class="loading"
+                            >
+                                Loading customers...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= CUSTOMERS JS ================= -->
+
+<script
+    type="module"
+    src="customers.js"
+></script>
+
+</body>
+
+</html>

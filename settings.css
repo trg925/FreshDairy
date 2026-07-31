@@ -1,0 +1,191 @@
+/* =========================
+   SETTINGS PAGE
+========================= */
+
+.settings-card {
+    background: #ffffff;
+    border: 1px solid #e8ebe8;
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 10px;
+}
+
+.settings-heading {
+    margin-bottom: 28px;
+}
+
+.settings-heading h2 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #1c1c1c;
+    margin-bottom: 5px;
+}
+
+.settings-heading p {
+    font-size: 13px;
+    color: #888;
+}
+
+
+/* FORM */
+
+#settingsForm {
+    max-width: 850px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #dfe4df;
+    border-radius: 9px;
+    padding: 13px 15px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    outline: none;
+    background: #ffffff;
+}
+
+.form-group input {
+    height: 50px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1f7a3c;
+    box-shadow: 0 0 0 3px rgba(31, 122, 60, 0.08);
+}
+
+
+/* PHONE + EMAIL */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+
+/* SAVE BUTTON */
+
+.save-settings-btn {
+    border: none;
+    background: #1f7a3c;
+    color: #ffffff;
+    padding: 13px 22px;
+    border-radius: 9px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.save-settings-btn:hover {
+    background: #176b36;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .settings-card {
+        padding: 20px;
+    }
+}
+
+.logo-preview{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid #ddd;
+    display:block;
+    margin-bottom:15px;
+}
+
+#businessLogo{
+    width:100%;
+}
+
+
+/* ========================================
+   BUSINESS LOGO FILE INPUT - FINAL
+======================================== */
+
+#businessLogo {
+    width: 100%;
+    max-width: 730px;
+    height: 46px;
+    padding: 4px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #d9e1dc;
+    border-radius: 8px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* CHOOSE FILE BUTTON */
+
+#businessLogo::file-selector-button {
+    height: 36px;
+    padding: 0 16px;
+    margin-right: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #1f833f;
+    color: white;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* HOVER */
+
+#businessLogo::file-selector-button:hover {
+    background: #176b33;
+}
+
+#logoPreview {
+    width: 260px;
+    height: 120px;
+    object-fit: contain;
+    object-position: center;
+    background: #ffffff;
+    border: 1px solid #dfe5e1;
+    border-radius: 10px;
+    padding: 4px;
+    box-sizing: border-box;
+}
